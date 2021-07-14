@@ -3,6 +3,118 @@
     padding: 0;
 }
 
+body{
+  margin: 50px 20px;
+  background-color: #36444F;
+  color: #DCDCDC;
+}
+
+a{
+  color: #DCDCDC;
+}
+
+h1{
+  font-size: 56px;
+}
+
+p{
+  font-size: 18px;
+}
+
+.head-title{
+  margin-top:35px;
+}
+.head-content{
+  margin-top:20px;
+}
+
+
+
+input[type="text"]{
+  font-size: 16px;
+  line-height: 1.5em;
+  padding: 30px 15px;
+  margin-bottom: 15px;
+  width: 90%;
+}
+
+button#btn_get{
+  font-size: 24px;
+  line-height: 1.5em;
+  padding: 20px 35px;
+  background: #768899;
+}
+
+
+.content{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-wrapper{
+  margin: 40px 0;
+  width: 100%;
+}
+
+.error{
+  font-size: 22px;
+}
+
+.result_video{
+  width: 100%;
+  margin: 10px 0;
+}
+
+video{
+  width: 100%;
+  max-height: 60vh;
+}
+
+
+.hidden{
+  display: none;
+}
+
+.visible{
+  display: block;
+}
+
+
+footer{
+  padding: 40px 0;
+  margin-top: 0px;
+}
+
+.footer-wrapper{
+  width: 50%;
+  display: flex;
+  font-size: 24px;
+}
+
+.footer-wrapper .name, .footer-wrapper .contacts{
+  width: 50%;
+}
+
+.footer-wrapper .name span{
+  display: block;
+  font-size: 20px;
+}
+
+
+
+.footer-wrapper a{
+
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+
+
+
+
+
 @media screen and (min-width:1200px){
   body{
     max-width: 1160px;
