@@ -20,26 +20,31 @@ function sendAjaxForm(result_video, video_form) {
         	result = $.parseJSON(response);
           console.log(result);
 
-          if (typeof result.error == "undefined" && result.video !="undefined") {
-            $('#result_video').html(
-              '<video src="'+ result.video +'" controls>');
-              viewVideo();
+          if (typeof result.error == "undefined" && typeof result.video !="undefined") {
+
+              viewVideo(result.video);
           }else{
+            if (typeof result.error != "undefined") {
+              $('#error').html(result.error);
+            }else if (result.length == 0) {
+              $('#error').html('Добавьте хотя бы одну ссылку');
+            }
 
-
-            $('#result_video').html(result.error);
           }
 
     	},
     	error: function(response) { // Данные не отправлены
-            $('#result_video').html('Ошибка. Данные не отправлены.');
+            $('#error').html('Ошибка. Данные не отправлены.');
     	}
  	});
 }
 
 
 
-function viewVideo(){
+function viewVideo(url){
   document.getElementById('form_wrapper').classList.add('hidden');
+  document.getElementById('video_wrapper').classList.toggle('hidden');
+  document.getElementById('error').classList.toggle('hidden');
+  document.getElementById('video_file').src = url;
   document.getElementById('instruction').innerHTML = "Видео готово";
 }

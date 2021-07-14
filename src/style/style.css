@@ -74,4 +74,39 @@
   .hidden{
     display: none;
   }
+
+  .visible{
+    display: block;
+  }
+
+
+  footer{
+    padding: 40px 0;
+    margin-top: 60px;
+  }
+
+  .footer-wrapper{
+    width: 50%;
+    display: flex;
+    font-size: 24px;
+  }
+
+  .footer-wrapper .name, .footer-wrapper .contacts{
+    width: 50%;
+  }
+
+  .footer-wrapper .name span{
+    display: block;
+    font-size: 20px;
+  }
+
+
+
+  .footer-wrapper a{
+
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
 }

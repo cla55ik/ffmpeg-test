@@ -10,11 +10,12 @@
   <body>
     <main>
       <div class="head-title">
-        <h1>Создаем видео из набора файлов</h1>
+        <h1>Создать видео из нескольких изображений</h1>
       </div>
       <div class="head-content">
         <p id="instruction">
           Вставьте ссылки на изображения в поля формы <br /> и нажмите кнопку 'Сгенерировать'
+          <br /> Можно добавить от 1 до 5 ссылок
         </p>
       </div>
       <div class="content">
@@ -28,6 +29,12 @@
           </form>
         </div>
         <div id="result_video" class="result_video">
+          <div class="error" id="error">
+
+          </div>
+          <div id="video_wrapper" class="video-wrapper hidden">
+            <video src="" controls  id="video_file">
+          </div>
 
 
         </div>
@@ -35,5 +42,21 @@
       </div>
 
     </main>
+    <footer>
+      <div class="footer-wrapper">
+        <div class="name">
+          <span>Created by</span> Ivan Chelnokov
+
+        </div>
+        <div class="contacts">
+          <div class="">
+            <a href="tel:+79102814760"> + 7 910 281 47 60</a>
+          </div>
+          <div class="">
+              <a href="mailto:cla55ik@yandex.ru">cla55ik@yandex.ru</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
