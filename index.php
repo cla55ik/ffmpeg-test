@@ -16,21 +16,22 @@
         <p>Вставьте ссылки на картинки в поля формы</p>
         <p>и нажмите кнопку 'Сгенерировать'</p>
       </div>
-      <div class="form-wrapper">
-        <form class="" action="" id="video_form" method="post">
-          <?php for ($i=1; $i < 6; $i++) {
-            echo('<input type="text" name="link'.$i.'" placeholder="ссылка '.$i.'"><br>');
-          } ?>
+      <div class="content">
+        <div class="form-wrapper">
+          <form class="" action="" id="video_form" method="post">
+            <?php for ($i=1; $i < 6; $i++) {
+              echo('<input type="text" name="link'.$i.'" placeholder="ссылка '.$i.'"><br>');
+            } ?>
 
-          <button type="button" id="btn_get" name="btn-get">Сгенерировать</button>
-        </form>
-      </div>
-      <div id="result_video">
+            <button type="button" id="btn_get" name="btn-get">Сгенерировать</button>
+          </form>
+        </div>
+        <div id="result_video" class="result_video">
+
+        </div>
 
       </div>
-      <div class="">
-        <a href="/pages/page.php">Tets</a>
-      </div>
+
 
       <?php require "./src/php/generate.php";
       //var_dump($_POST);
