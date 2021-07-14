@@ -2,6 +2,7 @@
 
 if (isset($_POST)) {
     $result = [];
+
     $links = array();
     $i = 1;
 
@@ -9,6 +10,7 @@ if (isset($_POST)) {
         if ($value != ''){
             $val=strip_tags(htmlspecialchars(stripslashes($value)));
             if(validateLink($val) && isImage($val)){
+
                 array_push($links, $val);
                 //$links += $val;
                 $result['arr'] = $links;
@@ -126,4 +128,14 @@ function saveImage($links, $dir){
         $i++;
     }
     return $images;
+}
+
+
+function saveFileToList($filename, $folder){
+    $file = '/upload/' . $folder . '/list.txt';
+    $f_hdl = fopen($file, 'w');
+    $strFile = "file " . $file . PHP_EOL;
+    $duration = 2;
+    fwrite($f_hdl, $text);
+
 }
