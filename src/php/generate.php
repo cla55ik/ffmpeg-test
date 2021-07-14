@@ -112,6 +112,7 @@ function makeDir(){
 function saveImage($links, $dir, $folder){
     $i=1;
     $images = [];
+    $file = $_SERVER['DOCUMENT_ROOT'] . '/upload/' . $folder . 'list.txt';
     foreach ($links as $link) {
         $image = @file_get_contents($link);
         if(!$image){
@@ -121,7 +122,7 @@ function saveImage($links, $dir, $folder){
             $createfile = fopen($dir . $filename, "w+");
             $writefile = fwrite($createfile, $image);
             array_push($images, $dir . $filename);
-            saveFileToList($filename, $folder, $i);
+            saveFileToList($file, $i);
             $message = 'File is write';
         }
         $i++;
@@ -130,13 +131,14 @@ function saveImage($links, $dir, $folder){
 }
 
 
-function saveFileToList($filename, $folder,$i){
-    $file = $_SERVER['DOCUMENT_ROOT'] . '/upload/' . $folder . 'list.txt';
-    $f_hdl = fopen($file, 'w');
+function saveFileToList($file,$i){
+
+
     $strFile = "file 'img" . $i . ".jpg'" . PHP_EOL;
     $duration = 'duration 2' . PHP_EOL;
     $text = $strFile . $duration;
-    fwrite($f_hdl, $text);
-    fclose($f_hdl);
+
+
+    file_put_contents($file, $text, FILE_APPEND);
 
 }
