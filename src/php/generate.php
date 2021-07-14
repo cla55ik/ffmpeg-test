@@ -147,7 +147,7 @@ function saveFileToList($file,$i){
 
 function createVideo($dir){
     //$ffmpeg = 'ffmpeg';
-    $direct = "ffmpeg -f concat -safe 0 -i '" . $dir . "list.txt' '" . $dir ."slideshowtest2.mp4'";
+    $direct = "ffmpeg -f concat -safe 0 -i '" . $dir . "list.txt' '" . $dir ."slideshowtest2.avi'";
 
     //$test = "ffmpeg -f concat -safe 0 -i '/var/www/webdev.ru.com/upload/1626260228/list.txt' '/var/www/webdev.ru.com/upload/1626259778/sli2.mp4/'";
     passthru($direct, $output);
