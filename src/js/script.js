@@ -1,10 +1,12 @@
 $( document ).ready(function() {
     $("#btn_get").click(
-		function(){
-			sendAjaxForm('result_video', 'video_form');
-			return false;
-		}
-	);
+    		function(){
+    			sendAjaxForm('result_video', 'video_form');
+    			return false;
+    		}
+    	);
+
+
 });
 
 
@@ -20,17 +22,8 @@ function sendAjaxForm(result_video, video_form) {
 
           if (typeof result.error == "undefined" && result.video !="undefined") {
             $('#result_video').html(
-              '<video src="'+ result.video +'" controls> <br>1: '+result.link1+
-                                    '<br>2: '+result.link2+
-                                    '<br>3: '+result.link3+
-                                    '<br>4: '+result.link4+
-                                    '<br>5: '+result.link5+
-                                    '<br>6: '+result.message+
-                                    '<br>new_dir: '+result.new_dir+
-                                    '<br>new_folder: '+result.new_folder+
-                                    '<br>length: '+result.length+
-                                    '<br>ff: '+result.length+
-                                    '<br>array links: '+result.arr);
+              '<video src="'+ result.video +'" controls>');
+              viewVideo();
           }else{
 
 
@@ -42,4 +35,11 @@ function sendAjaxForm(result_video, video_form) {
             $('#result_video').html('Ошибка. Данные не отправлены.');
     	}
  	});
+}
+
+
+
+function viewVideo(){
+  document.getElementById('form_wrapper').classList.add('hidden');
+  document.getElementById('instruction').innerHTML = "Видео готово";
 }

@@ -13,11 +13,12 @@
         <h1>Создаем видео из набора файлов</h1>
       </div>
       <div class="head-content">
-        <p>Вставьте ссылки на картинки в поля формы</p>
-        <p>и нажмите кнопку 'Сгенерировать'</p>
+        <p id="instruction">
+          Вставьте ссылки на изображения в поля формы <br /> и нажмите кнопку 'Сгенерировать'
+        </p>
       </div>
       <div class="content">
-        <div class="form-wrapper">
+        <div class="form-wrapper" id="form_wrapper">
           <form class="" action="" id="video_form" method="post">
             <?php for ($i=1; $i < 6; $i++) {
               echo('<input type="text" name="link'.$i.'" placeholder="ссылка '.$i.'"><br>');
