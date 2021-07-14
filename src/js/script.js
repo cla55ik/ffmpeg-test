@@ -13,16 +13,13 @@ $( document ).ready(function() {
 
 function sendAjaxForm(result_video, video_form) {
     $.ajax({
-        url:     "/src/php/generate.php", //url страницы (action_ajax_form.php)
-        type:     "POST", //метод отправки
-        dataType: "html", //формат данных
-        data: $("#"+video_form).serialize(),  // Сеарилизуем объект
-        success: function(response) { //Данные отправлены успешно
+        url:     "/src/php/generate.php",
+        type:     "POST",
+        dataType: "html",
+        data: $("#"+video_form).serialize(),
+        success: function(response) {
         	result = $.parseJSON(response);
-          console.log(result);
-
           if (typeof result.error == "undefined" && typeof result.video !="undefined") {
-
               viewVideo(result.video);
           }else{
             if (typeof result.error != "undefined") {
@@ -34,7 +31,7 @@ function sendAjaxForm(result_video, video_form) {
           }
 
     	},
-    	error: function(response) { // Данные не отправлены
+    	error: function(response) { 
             $('#error').html('Ошибка. Данные не отправлены.');
     	}
  	});
