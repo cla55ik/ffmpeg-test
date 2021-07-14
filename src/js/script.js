@@ -26,6 +26,7 @@ function sendAjaxForm(result_video, video_form) {
                                     '<br>5: '+result.link5+
                                     '<br>6: '+result.message+
                                     '<br>new_dir: '+result.new_dir+
+                                    '<br>new_folder: '+result.new_folder+
                                     '<br>length: '+result.length+
                                     '<br>array links: '+result.arr);
           }else{

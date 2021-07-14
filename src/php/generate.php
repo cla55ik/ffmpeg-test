@@ -23,18 +23,20 @@ if (isset($_POST)) {
         }
     }
 
-    $length = count($links);
-    $result['length'] = $length;
+    $lengthLinks = count($links);
+    $result['length'] = $lengthLinks;
 
     //$result['message'] = isCorrectArray($result);
 
-    if (isCorrectArray($result, $length)) {
-        $new_dir = makeDir();
+    if (isCorrectArray($result, $lengthLinks)) {
+        [$new_dir, $new_folder] = makeDir();
+        //$new_dir = makeDir();
         $result['new_dir'] = $new_dir;
+        $result['new_folder'] = $new_folder;
     }
 
     if($new_dir){
-        $images = saveImage($links,$new_dir);
+        $images = saveImage($links,$new_dir, $new_folder);
         $result['arr'] = $images;
     }
 
@@ -81,12 +83,8 @@ function isImage($link){
 
 function isCorrectArray($array, $length){
     if (!isset($array['error']) && $length > 0) {
-        //$message = 'массив NOT готов';
-        //return $message;
         return true;
     }else{
-        //$message = 'массив готов';
-        //return $message;
         return false;
     }
 }
@@ -105,13 +103,13 @@ function makeDir(){
     if (mkdir($path . $folder, 0777, $recursive) == false) {
         return false;
     }else{
-
-        return $path . $folder;
+        $new_path = $path . $folder;
+        return [$new_path, $folder];
     }
 }
 
 
-function saveImage($links, $dir){
+function saveImage($links, $dir, $folder){
     $i=1;
     $images = [];
     foreach ($links as $link) {
@@ -123,6 +121,7 @@ function saveImage($links, $dir){
             $createfile = fopen($dir . $filename, "w+");
             $writefile = fwrite($createfile, $image);
             array_push($images, $dir . $filename);
+            saveFileToList($filename, $folder, $i);
             $message = 'File is write';
         }
         $i++;
@@ -131,11 +130,13 @@ function saveImage($links, $dir){
 }
 
 
-function saveFileToList($filename, $folder){
-    $file = '/upload/' . $folder . '/list.txt';
+function saveFileToList($filename, $folder,$i){
+    $file = $_SERVER['DOCUMENT_ROOT'] . '/upload/' . $folder . 'list.txt';
     $f_hdl = fopen($file, 'w');
-    $strFile = "file " . $file . PHP_EOL;
-    $duration = 2;
+    $strFile = "file 'img" . $i . ".jpg'" . PHP_EOL;
+    $duration = 'duration 2' . PHP_EOL;
+    $text = $strFile . $duration;
     fwrite($f_hdl, $text);
+    fclose($f_hdl);
 
 }
