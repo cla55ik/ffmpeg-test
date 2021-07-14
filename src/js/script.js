@@ -1,6 +1,7 @@
 $( document ).ready(function() {
     $("#btn_get").click(
     		function(){
+          document.getElementById('error').innerHTML = "Запрос обрабатывается...";
     			sendAjaxForm('result_video', 'video_form');
     			return false;
     		}

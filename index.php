@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Создаем видео</title>
+    <link type="image/x-icon" rel="shortcut icon" href="/src/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/src/style/style.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="/src/js/script.js"></script>
