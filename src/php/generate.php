@@ -39,6 +39,7 @@ if (isset($_POST)) {
         $images = saveImage($links,$new_dir, $new_folder);
         $result['arr'] = $images;
         $result['ff'] = createVideo($new_dir);
+        $result['video'] = '/upload/' . $new_folder . 'result.mp4';
     }
 
 
@@ -146,10 +147,9 @@ function saveFileToList($file,$i){
 
 
 function createVideo($dir){
-    //$ffmpeg = 'ffmpeg';
-    $direct = "ffmpeg -f concat -safe 0 -i '" . $dir . "list.txt' '" . $dir ."slideshowtest2.avi'";
 
-    //$test = "ffmpeg -f concat -safe 0 -i '/var/www/webdev.ru.com/upload/1626260228/list.txt' '/var/www/webdev.ru.com/upload/1626259778/sli2.mp4/'";
+    $direct = "ffmpeg -f concat -safe 0 -i '" . $dir . "list.txt' '" . $dir ."result.mp4'";
+
     passthru($direct, $output);
-    return $direct;
+    //return $direct;
 }

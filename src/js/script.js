@@ -18,8 +18,9 @@ function sendAjaxForm(result_video, video_form) {
         	result = $.parseJSON(response);
           console.log(result);
 
-          if (typeof result.error == "undefined") {
-            $('#result_video').html('1: '+result.link1+
+          if (typeof result.error == "undefined" && result.video !="undefined") {
+            $('#result_video').html(
+              '<video src="'+ result.video +'" controls> <br>1: '+result.link1+
                                     '<br>2: '+result.link2+
                                     '<br>3: '+result.link3+
                                     '<br>4: '+result.link4+
@@ -28,8 +29,8 @@ function sendAjaxForm(result_video, video_form) {
                                     '<br>new_dir: '+result.new_dir+
                                     '<br>new_folder: '+result.new_folder+
                                     '<br>length: '+result.length+
-                                    '<br>ff: '+result.ff+
-                                    '<br>array linkS: '+result.arr);
+                                    '<br>ff: '+result.length+
+                                    '<br>array links: '+result.arr);
           }else{
 
 

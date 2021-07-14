@@ -27,18 +27,12 @@
           </form>
         </div>
         <div id="result_video" class="result_video">
-          <video src="/upload/1626259797/slideshow.mp4" controls>
 
-          </video>
+
         </div>
 
       </div>
 
-
-      <?php require "./src/php/generate.php";
-      //var_dump($_POST);
-
-       ?>
     </main>
   </body>
 </html>

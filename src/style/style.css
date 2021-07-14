@@ -65,4 +65,8 @@
     width: 50%;
     margin: 60px 0;
   }
+
+  video{
+    width: 100%;
+  }
 }
